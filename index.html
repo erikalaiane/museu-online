@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .swiper-slide-active {
+            transform: scale(1.1);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-5xl text-center">
+        <h1 class="text-4xl font-bold mb-6">Museu Online</h1>
+        
+        <!-- Carrossel -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide glass">
+                    <img src="https://via.placeholder.com/600x400" alt="Obra de Arte" class="w-full rounded-lg">
+                    <h2 class="text-2xl font-semibold mt-4">Noite Estrelada</h2>
+                    <p class="text-gray-300">Autor: Vincent van Gogh</p>
+                </div>
+                <div class="swiper-slide glass">
+                    <img src="https://via.placeholder.com/600x400" alt="Obra de Arte" class="w-full rounded-lg">
+                    <h2 class="text-2xl font-semibold mt-4">A Persistência da Memória</h2>
+                    <p class="text-gray-300">Autor: Salvador Dalí</p>
+                </div>
+                <div class="swiper-slide glass">
+                    <img src="https://via.placeholder.com/600x400" alt="Obra de Arte" class="w-full rounded-lg">
+                    <h2 class="text-2xl font-semibold mt-4">O Grito</h2>
+                    <p class="text-gray-300">Autor: Edvard Munch</p>
+                </div>
+            </div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 30,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
